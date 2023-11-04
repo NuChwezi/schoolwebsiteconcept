@@ -1,0 +1,98 @@
+* {
+  font-family: "Dancing Script", cursive;
+}
+
+.curtain {
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.curtain .curtainWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+input[type=checkbox] {
+  position: absolute;
+  /* Force checkbox at start of container */
+  cursor: pointer;
+  /* Indicate curtain is clickable */
+  width: 100%;
+  /* The checkbox is as wide as the component */
+  height: 100%;
+  /* checkbox is tall as component */
+  z-index: 100;
+  /* Make sure checkbox is ontop of everything */
+  opacity: 0;
+  /* hide the checkbox */
+  top: 0;
+  left: 0;
+}
+
+/* slide first panel */
+input[type=checkbox]:checked ~ div.curtainPanelLeft {
+  transform: translateX(0);
+}
+
+/* slide second panel */
+input[type=checkbox]:checked ~ div.curtainPanelRight {
+  transform: translateX(0);
+}
+
+.curtainPanel {
+  background: #2C0A26;
+  width: 50%;
+  height: 100vh;
+  float: left;
+  position: relative;
+  z-index: 2;
+  transition: all 1s ease-out;
+}
+
+.curtainPanelLeft {
+  transform: translateX(-100%);
+}
+.curtainPanelLeft .leftpanel {
+  float: right;
+  color: #D9FFA9;
+  font-size: 30px;
+  margin-right: 3px;
+}
+
+.curtainPanelRight {
+  transform: translateX(100%);
+}
+.curtainPanelRight .rightpanel {
+  color: #ec3a8b;
+  font-size: 30px;
+  margin-left: 3px;
+}
+
+.curtainPrize {
+  background: #333;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+.curtainPrize iframe {
+  width: 200px;
+  height: 200px;
+}
+.curtainPrize p {
+  color: #FFF;
+  font-size: 32px;
+  margin-top: -30px;
+}
+
+p.bunnies {
+  margin-top: 10%;
+}
+
+a.launcher {
+  text-decoration: none;
+  color: cyan;
+  font-weight: bold;
+}
